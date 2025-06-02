@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Listing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="My Store Logo">
+  <span style="font-size: 1.5rem;">My Store</span>
+</header>
+
+<main>
+  <div class="container card-grid" id="product-list">
+    <!-- Products will be loaded here dynamically -->
+  </div>
+</main>
+
+<footer>
+  <p>Link Development ©2025. All Rights Reserved.</p>
+</footer>
+
+<script>
+fetch('https://dummyjson.com/products')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('product-list');
+    data.products.forEach(product => {
+      const card = document.createElement('a');
+      card.href = "product.html";
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${product.thumbnail}" alt="${product.title}">
+        <div class="card-title">${product.title}</div>
+        <div class="card-price">$${product.price}</div>
+      `;
+      container.appendChild(card);
+    });
+  });
+</script>
+
+</body>
+</html>
