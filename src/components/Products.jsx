@@ -33,11 +33,11 @@ function ProductsList({initialProducts, initialTotal}) {
 
   const handlePrevPage = () => {
     if (skip > 0) {
-      fetchProducts(skip - limit);
+      fetchProducts(skip - 8);
     }
   };
 
-  const currentPage = Math.floor(skip / limit) + 1;
+  const currentPage = Math.floor(skip / 8) + 1;
 
   return (
     <div className="products-container">
@@ -45,12 +45,12 @@ function ProductsList({initialProducts, initialTotal}) {
       {loading ? (
         <p className="text-center text-xl">Loading products...</p>
       ) : (
-        <div className="container">
+        <div className="container card-grid" id="product-list">
           {products.map((product) => (
             <div key={product.id} className="card">
                 <img src={product.thumbnail} alt={product.title}/>
-                <div class="card-title">{product.title}</div>
-                <div class="card-price">$${product.price}</div>
+                <div className="card-title">{product.title}</div>
+                <div className="card-price">$${product.price}</div>
             </div>
           ))}
         </div>
@@ -60,7 +60,7 @@ function ProductsList({initialProducts, initialTotal}) {
             Previous
             </button>
             <span className="text-lg">Page {currentPage} of {totalPages}</span>
-            <button onClick={handleNextPage} disabled={skip + limit >= initialTotal || loading}>
+            <button onClick={handleNextPage} disabled={skip + 8 >= initialTotal || loading}>
             Next
             </button>
         </div>
