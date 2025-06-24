@@ -1,0 +1,21 @@
+---
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import '../styles/style.css'
+export const prerender = true;
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Products List</title>
+	</head>
+	<body>
+		<Header/>
+		<div class="home-content">
+		</div>
+		<Footer/>
+	</body>
+</html>
