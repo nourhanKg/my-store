@@ -26,8 +26,8 @@ function ProductsList({initialProducts, initialTotal}) {
 
   // Handle next/previous page clicks
   const handleNextPage = () => {
-    if (skip + limit < initialTotal) {
-      fetchProducts(skip + limit);
+    if (skip + 8 < initialTotal) {
+      fetchProducts(skip + 8);
     }
   };
 
@@ -41,7 +41,6 @@ function ProductsList({initialProducts, initialTotal}) {
 
   return (
     <div className="products-container">
-      <h2 className="text-3xl mb-6 text-center">Our Amazing Products</h2>
       {loading ? (
         <p className="text-center text-xl">Loading products...</p>
       ) : (
@@ -55,11 +54,11 @@ function ProductsList({initialProducts, initialTotal}) {
           ))}
         </div>
       )}
-        <div className="pagination-controls flex justify-center items-center space-x-4 mt-8">
+        <div className="pagination-controls">
             <button onClick={handlePrevPage} disabled={skip === 0 || loading}>
             Previous
             </button>
-            <span className="text-lg">Page {currentPage} of {totalPages}</span>
+            <span>Page {currentPage} of {totalPages}</span>
             <button onClick={handleNextPage} disabled={skip + 8 >= initialTotal || loading}>
             Next
             </button>
