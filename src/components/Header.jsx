@@ -8,9 +8,8 @@ export default function Header() {
         <nav>
           <ul className="flex space-x-4">
             <li><a href="/" className="hover:underline">Home</a></li>
-            <li><a href="/products" className="hover:underline">Products (SSG)</a></li>
-            <li><a href="/ssr-page" className="hover:underline">SSR Page</a></li>
-            <li><a href="/ssg-page" className="hover:underline">SSG Page</a></li>
+            <li><a href="/products" className="hover:underline">Products (SSR)</a></li>
+            <li><a href="/posts" className="hover:underline">Posts (SSG)</a></li>
           </ul>
         </nav>
     </header>

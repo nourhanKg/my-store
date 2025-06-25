@@ -6,7 +6,6 @@ function ProductsList({initialProducts, initialTotal}) {
   const [loading, setLoading] = useState(false);
   const totalPages = Math.ceil(initialTotal / 8);
 
-  // Function to fetch products from the API
   const fetchProducts = async (newSkip) => {
     setLoading(true);
     try {
@@ -23,8 +22,6 @@ function ProductsList({initialProducts, initialTotal}) {
       setLoading(false);
     }
   };
-
-  // Handle next/previous page clicks
   const handleNextPage = () => {
     if (skip + 8 < initialTotal) {
       fetchProducts(skip + 8);
