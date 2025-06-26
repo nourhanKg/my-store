@@ -41,18 +41,17 @@ function PostsList({ initialPosts, initialTotal}) {
 
   return (
     <div className="posts-container">
-      <h2 className="text-3xl mb-6 text-center">Latest Blog Posts</h2>
       {loading ? (
         <p className="text-center text-xl">Loading posts...</p>
       ) : (
-        <div className="container card-grid" id="post-list">
+        <div className="container post-grid" id="post-list">
           {posts.map((post) => (
-            <div key={post.id} className="card">
-              <h3 className="card-title">{post.title}</h3>
-              <p className="card-price">{post.body}</p>
+            <div key={post.id} className="post">
+              <h3 className="post-title">{post.title}</h3>
+              <p className="post-price">{post.body}</p>
               <div className="reactions">
-                <span>Likes: {post.likes}</span>
-                <span>Dislikes: {post.dislikes}</span>
+                <span><span>Likes:</span> {post.reactions.likes}</span>
+                <span><span>Dislikes:</span> {post.reactions.dislikes}</span>
                 {/* <button className="small-button">Read More</button> */}
               </div>
             </div>

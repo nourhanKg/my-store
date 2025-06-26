@@ -109,6 +109,33 @@ footer {
   margin-bottom: 1rem;
 }
 
+.post-grid {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post {
+  background: #ffffff;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.post-price {
+  font-size: 1rem;
+}
+
 a {
   text-decoration: none;
   color: inherit;
